@@ -65,6 +65,9 @@
 #define VCM5883L_CTR_REG1             (0x0B)
 #define VCM5883L_CTR_REG2             (0x0A)
 
+#ifndef MinMaxDecrease
+#define MinMaxDecrease                0.01f
+#endif
 typedef enum
 {
   HMC5883L_SAMPLES_8    = 0b11,
@@ -316,6 +319,7 @@ class DFRobot_QMC5883
     float minX, maxX;
     float minY, maxY;
     float minZ, maxZ;
+    float decrease;
     bool firstRun;
 };
 
